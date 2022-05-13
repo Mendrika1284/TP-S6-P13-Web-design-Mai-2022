@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://627e2cbd1ee15f4e5d9c5728--golden-lamington-cde8bb.netlify.app/';
+$config['base_url'] = 'https://rechauffementclimatique.netlify.app/';
 
 /*
 |--------------------------------------------------------------------------
