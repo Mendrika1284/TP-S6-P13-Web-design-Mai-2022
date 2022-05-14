@@ -20,7 +20,9 @@ class BaseController extends CI_Controller {
      */
     public function index()
     {
-        $this->load->view('fronttemplate');
+        $data = array();
+        $data['listeQuestion'] = $this->FirstModel->getAllQuestion();
+        $this->load->view('fronttemplate',$data);
     }
 }
 ?>

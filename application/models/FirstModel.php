@@ -2,8 +2,8 @@
 
 class FirstModel extends CI_Model
 {
-    public function getListCaisse(){
-        $query=$this->db->query('SELECT * FROM Caisse');
+    public function getAllQuestion(){
+        $query=$this->db->query('SELECT * FROM Question');
         $tab = array();
         foreach ($query->result_array() as $row) {
             $nom = $row;

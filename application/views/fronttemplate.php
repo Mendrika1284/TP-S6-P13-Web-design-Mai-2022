@@ -22,14 +22,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">E-devyweb</a>
+                <a class="navbar-brand" onclick="main();" href="#">E-devyweb</a>
                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button> -->
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" onclick="sommaire()" href="#">Sommaire de ce sujet</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" onclick="sommaire();" href="#">Sommaire de ce sujet</a></li>
                         <!-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li> -->
@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </header>
         <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
+        <div id="main-container" class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
@@ -75,6 +75,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a href="https://www.jedonnedusens.com/le-rechauffement-climatique-causes-impacts-et-solutions-possibles/">https://www.jedonnedusens.com/le-rechauffement-climatique-causes-impacts-et-solutions-possibles/</a>
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="question-container" class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <?php
+                        foreach ($listeQuestion as $key) { ?>
+                            <div class="post-preview">
+                                <a href="#">
+                                    <h2><?php echo $key['question'] ?></h2>
+                                </a><br>
+                            </div>
+                    <?php }?>
+                </div>
             </div>
         </div>
         <!-- Footer-->
@@ -117,8 +132,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="<?php echo site_url('assets/js/scripts.js')?>"></script>
+        <!-- Script pour permettre de voir le sommaire -->
         <script>
-            
+            var mainContainer = document.getElementById("main-container");
+            var questionContainer = document.getElementById("question-container");
+            mainContainer.style.display = "block";
+            questionContainer.style.display = "none";
+            function sommaire(){
+                mainContainer.style.display = "none";
+                questionContainer.style.display = "block";
+            }
+            function main(){
+                mainContainer.style.display = "block";
+                questionContainer.style.display = "none";
+            }
         </script>
     </body>
 </html>
