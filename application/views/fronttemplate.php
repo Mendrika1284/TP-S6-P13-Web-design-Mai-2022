@@ -17,6 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="<?php echo site_url('assets/css/styles.css') ?>" rel="stylesheet" />
+        <link href="<?php echo site_url('assets/css/frontOffice.css') ?>" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
@@ -74,6 +75,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             source
                             <a href="https://www.jedonnedusens.com/le-rechauffement-climatique-causes-impacts-et-solutions-possibles/">https://www.jedonnedusens.com/le-rechauffement-climatique-causes-impacts-et-solutions-possibles/</a>
                         </p>
+                        
+                    <center><a href="#" style="color:red" onclick="sommaire();">Voir sommaire</a></center><br>
                     </div>
                 </div>
             </div>
@@ -85,10 +88,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         foreach ($listeQuestion as $key) { ?>
                             <div class="post-preview">
                                 <a href="#">
-                                    <h2><?php echo $key['question'] ?></h2>
+                                <center><h2><?php echo $key['question'] ?></h2></center>
                                 </a><br>
                             </div>
                     <?php }?>
+                    <center><a href="#" style="color:red" onclick="main();">Revoir définition</a></center><br>
                 </div>
             </div>
         </div>
