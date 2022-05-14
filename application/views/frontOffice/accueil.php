@@ -75,7 +75,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             source
                             <a href="https://www.jedonnedusens.com/le-rechauffement-climatique-causes-impacts-et-solutions-possibles/">https://www.jedonnedusens.com/le-rechauffement-climatique-causes-impacts-et-solutions-possibles/</a>
                         </p>
-                        
                     <center><a href="#" style="color:red" onclick="sommaire();">Voir sommaire</a></center><br>
                     </div>
                 </div>
