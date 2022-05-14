@@ -1,6 +1,6 @@
 <?php if(! defined('BASEPATH')) exit('No direct script access allowed');
 
-class FrontModel extends CI_Model
+class FirstModel extends CI_Model
 {
     public function getListCaisse(){
         $query=$this->db->query('SELECT * FROM Caisse');
