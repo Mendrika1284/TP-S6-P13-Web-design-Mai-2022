@@ -42,8 +42,8 @@ class FrontController extends CI_Controller {
             $data['question'] = $this->FirstModel->getQuestionById($idQuestion);
             $data['consequence'] = $this->FirstModel->getConsequence();
             $data['title'] = "Conséquence";
-            $data['header'] = 'util/header/consequence';
-            $data['view'] = 'util/view/consequence';
+            $data['header'] = 'util/header/consequenceBase';
+            $data['view'] = 'util/view/consequenceBase';
             $this->load->view('frontdetail',$data);
         }else if($idQuestion == 3){
             $data['question'] = $this->FirstModel->getQuestionById($idQuestion);
@@ -55,6 +55,15 @@ class FrontController extends CI_Controller {
         }else{
             $this->load->view('errors/html/error_404.php');
         }
+    }
+    public function consequence(){
+        $data = array();
+        $idConsequence = $_GET['idConsequence'];
+        $data['consequence'] = $this->FirstModel->getConsequenceById($idConsequence);
+        $data['title'] = "Conséquence";
+        $data['header'] = 'util/header/consequence';
+        $data['view'] = 'util/view/consequence';
+        $this->load->view('frontdetail',$data);
     }
 }
 
