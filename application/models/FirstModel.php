@@ -44,6 +44,18 @@ class FirstModel extends CI_Model
         return $tab;
     }
 
+    public function getConsequenceById($id){
+        $query="SELECT * FROM Consequence WHERE id=%s";
+        $sprint = sprintf($query, $this->db->escape($id));
+        $query = $this->db->query($sprint);
+        $tab = array();
+        foreach ($query->result_array() as $row) {
+            $nom = $row;
+            $tab[] = $nom;
+        }
+        return $tab;
+    }
+
     public function getSolution(){
         $query=$this->db->query('SELECT * FROM Solution');
         $tab = array();
