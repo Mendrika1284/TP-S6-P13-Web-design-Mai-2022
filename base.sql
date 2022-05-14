@@ -4,7 +4,7 @@ use Rechauffement;
 
 CREATE TABLE Question(
     id int not null primary key auto_increment,
-    representation varchar(10),
+    representation varchar(100),
     question varchar(256)
 );
 
@@ -17,7 +17,7 @@ CREATE TABLE Cause(
 CREATE TABLE Consequence(
     id int not null primary key auto_increment,
     idQuestion int not null references Question(id),
-    representation varchar(10),
+    representation varchar(100),
     titre varchar(100),
     consequence text
 );
