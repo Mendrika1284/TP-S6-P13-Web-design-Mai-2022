@@ -4,6 +4,7 @@ use Rechauffement;
 
 CREATE TABLE Question(
     id int not null primary key auto_increment,
+    representation varchar(10),
     question varchar(256)
 );
 
@@ -28,9 +29,9 @@ CREATE TABLE Solution(
 );
 
 INSERT INTO Question VALUES
-(null,"Quelles sont les causes connues du réchauffement climatique ?"),
-(null,"Quelles sont les conséquences de ce réchauffement climatique ?"),
-(null,"Les solutions envisagées contre le réchauffement climatique ?");
+(null,"cause-bg.jpg","Quelles sont les causes connues du réchauffement climatique ?"),
+(null,"cons-bg.jpg","Quelles sont les conséquences de ce réchauffement climatique ?"),
+(null,"solution-bg.jpg","Les solutions envisagées contre le réchauffement climatique ?");
 
 INSERT INTO Cause VALUES
 (null,1,"Cette augmentation de la chaleur serait due à l’homme. La combustion des combustibles fossiles a libéré des gaz à effet de serre dans l’atmosphère, qui emprisonnent la chaleur du soleil et font monter les températures de surface et de l’air.
