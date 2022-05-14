@@ -8,8 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <title>Le rechauffement Climatique</title>
+        <link rel="icon" type="image/x-icon" href="<?php echo site_url('assets/pngegg.ico')?> " />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts--> 
@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </button> -->
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Sommaire de ce sujet</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" onclick="sommaire()" href="#">Sommaire de ce sujet</a></li>
                         <!-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li> -->
@@ -117,5 +117,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="<?php echo site_url('assets/js/scripts.js')?>"></script>
+        <script>
+            
+        </script>
     </body>
 </html>
