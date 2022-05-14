@@ -56,19 +56,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="post.html">
+                        <a href="#">
                             <h2 class="post-title">Qu’est-ce que le réchauffement climatique ?</h2>
-                            <h3 class="post-subtitle">Le globe se réchauffe. Les terres et les océans sont plus chauds aujourd’hui qu’ils ne l’étaient à l’époque où l’on a commencé à tenir des registres, en 1880, et les températures continuent d’augmenter. Cette augmentation de la chaleur est un réchauffement climatique, en un mot.</h3>
+                            <h3 class="post-subtitle">Le globe se réchauffe. 
+                                Les terres et les océans sont plus chauds aujourd’hui qu’ils ne l’étaient à l’époque où l’on a commencé à tenir des registres, en 1880, et les températures continuent d’augmenter. 
+                                Cette augmentation de la chaleur est un réchauffement climatique, en un mot.</h3></a>
                             <p>
                             Voici les chiffres exacts,
                             selon la National Oceanic and Atmospheric Administration (NOAA) : 
-                            Entre 1880 et 1980, la température mondiale annuelle a augmenté à un taux de 0,07 degré Celsius par décennie, en moyenne.
-                            Depuis 1981, le taux d’augmentation s’est accéléré pour atteindre 0,18 degrés C par décennie. 
-                            Cela a conduit à une augmentation globale de 1,4 degrés C de la température moyenne mondiale aujourd’hui par rapport à l’ère préindustrielle. 
+                            Entre 1880 et 1980, la température mondiale annuelle a augmenté à un taux de <b>0,07 degré Celsius par décennie</b>, en moyenne.
+                            Depuis 1981, le taux d’augmentation s’est accéléré pour atteindre <b>0,18 degrés C par décennie</b>. 
+                            Cela a conduit à une <b>augmentation globale de 1,4 degrés C de la température moyenne mondiale</b> aujourd’hui par rapport à l’ère préindustrielle. 
                             En 2019, la température mondiale moyenne sur terre et dans les océans était supérieure de 0,95 °C à la moyenne du XXe siècle. 
                             Cela fait de 2019 la deuxième année la plus chaude jamais enregistrée, avec un retard de seulement 2016, 2020 bat tous les records quant à elle. 
                             </p>
-                        </a>
                         <p class="post-meta">
                             source
                             <a href="https://www.jedonnedusens.com/le-rechauffement-climatique-causes-impacts-et-solutions-possibles/">https://www.jedonnedusens.com/le-rechauffement-climatique-causes-impacts-et-solutions-possibles/</a>
