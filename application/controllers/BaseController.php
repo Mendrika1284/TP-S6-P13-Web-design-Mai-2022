@@ -22,7 +22,7 @@ class BaseController extends CI_Controller {
     {
         $data = array();
         $data['listeQuestion'] = $this->FirstModel->getAllQuestion();
-        $this->load->view('fronttemplate',$data);
+        $this->load->view('frontOffice/accueil',$data);
     }
 }
 ?>
