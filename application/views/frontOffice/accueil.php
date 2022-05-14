@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" onclick="main();" href="#">E-devyweb</a>
+                <a class="navbar-brand" onclick="main();" href="#">ETU001284</a>
                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -87,8 +87,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php
                         foreach ($listeQuestion as $key) { ?>
                             <div class="post-preview">
-                                <a href="#">
-                                <center><h2><?php echo $key['question'] ?></h2></center>
+                                <a href="<?php echo site_url('FrontController/question'); ?>?idQuestion=<?php echo $key['id'];  ?>">
+                                <center><h2><?php echo $key['question']; ?></h2></center>
                                 </a><br>
                             </div>
                     <?php }?>
