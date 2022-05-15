@@ -2,6 +2,13 @@ DROP DATABASE Rechauffement;
 CREATE DATABASE Rechauffement;
 use Rechauffement;
 
+CREATE TABLE Admin(
+    login varchar(256) not null,
+    mdp varchar(256) not null
+);
+
+INSERT INTO Admin VALUES("Administrateur",sha1('admin'));
+
 CREATE TABLE Question(
     id int not null primary key auto_increment,
     representation varchar(100),
