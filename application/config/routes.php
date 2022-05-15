@@ -53,3 +53,8 @@ $route['sessionex'] = 'BaseController';
 $route['default_controller'] = 'BaseController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['welcome'] = 'BaseController/index';
+$route['backoffice'] = 'BackController/login';
+$route['liste-question-(:any)']="FrontController/question/$1";
+$route['liste-consequence-(:any)']="FrontController/consequence/$1";
