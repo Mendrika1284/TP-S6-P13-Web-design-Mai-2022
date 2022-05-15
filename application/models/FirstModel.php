@@ -2,6 +2,19 @@
 
 class FirstModel extends CI_Model
 {
+
+    public function login($login, $mdp){
+        $query ="SELECT * FROM Admin WHERE login =%s AND mdp =%s";
+        $sprint = sprintf($query,$this->db->escape($login),$this->db->escape($mdp));
+        $query=$this->db->query($sprint);
+        $tab = array();
+        foreach ($query->result_array() as $row) {
+            $nom = $row;
+            $tab[] = $nom;
+        }
+        return $tab;
+    }
+
     public function getAllQuestion(){
         $query=$this->db->query('SELECT * FROM Question');
         $tab = array();
