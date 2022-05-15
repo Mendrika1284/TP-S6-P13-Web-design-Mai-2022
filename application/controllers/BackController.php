@@ -22,5 +22,17 @@ class BackController extends CI_Controller {
     {
         $this->load->view('backOffice/login');
     }
+
+    public function go(){
+        $login = $this->input->post('login');
+        $mdp = $this->input->post('mdp');
+        if($this->FirstModel->loginSuperUtilisateur($login,sha1($mdp))){
+                $this->load->view("template.php",$data);
+        }else{
+            $data = array();
+            $data['erreur'] = "Email ou Mot de passe introuvable";
+            $this->load->view("connexion.php",$data);            
+        }
+    }
 }
 ?>
