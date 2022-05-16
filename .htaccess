@@ -1,5 +1,6 @@
 RewriteEngine on
-RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteRule (.*)-([_a-z0-9]*)$  FrontController/question?url=$1&id=$2 [L]
+RewriteRule (.*)-([_a-z0-9]*)$  FrontController/consequence?url=$1&id=$2 [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L,QSA]
