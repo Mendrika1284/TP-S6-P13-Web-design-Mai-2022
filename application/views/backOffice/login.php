@@ -83,6 +83,13 @@
 </head>
 <!--Coded with love by Mutiullah Samim-->
 <body>
+<?php
+    if(isset($erreur)){ ?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo $erreur ?>
+        </div>
+    <?php }
+?>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -92,7 +99,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
+					<form action="<?php echo site_url('BackController/seConnecter') ?>" method="post">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -106,7 +113,7 @@
 							<input type="password" name="mdp" class="form-control input_pass" value="" placeholder="Mot de passe">
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" name="button" class="btn login_btn">Login</button>
+				 	<button type="submit" name="button" class="btn login_btn">Login</button>
 				   </div>
 					</form>
 				</div>
