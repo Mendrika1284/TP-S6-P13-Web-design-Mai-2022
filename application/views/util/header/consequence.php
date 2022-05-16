@@ -3,7 +3,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="post-heading">
-                        <h1><?php echo $consequence[0]['titre']; ?></h1>
+                        <h1><?php echo $title; ?></h1>
                     </div>
                 </div>
             </div>

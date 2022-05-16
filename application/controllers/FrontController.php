@@ -34,21 +34,21 @@ class FrontController extends CI_Controller {
         if($idQuestion == 1){
             $data['question'] = $this->FirstModel->getQuestionById($idQuestion);
             $data['cause'] = $this->FirstModel->getCause();
-            $data['title'] = "Cause";
+            $data['title'] = $data['question'][0]['question'];
             $data['header'] = 'util/header/cause';
             $data['view'] = 'util/view/cause';
             $this->load->view('frontdetail',$data);
         }else if($idQuestion == 2){
             $data['question'] = $this->FirstModel->getQuestionById($idQuestion);
             $data['consequence'] = $this->FirstModel->getConsequence();
-            $data['title'] = "Conséquence";
+            $data['title'] = $data['question'][0]['question'];
             $data['header'] = 'util/header/consequenceBase';
             $data['view'] = 'util/view/consequenceBase';
             $this->load->view('frontdetail',$data);
         }else if($idQuestion == 3){
             $data['question'] = $this->FirstModel->getQuestionById($idQuestion);
             $data['solution'] = $this->FirstModel->getSolution();
-            $data['title'] = "Solution";
+            $data['title'] = $data['question'][0]['question'];
             $data['header'] = 'util/header/solution';
             $data['view'] = 'util/view/solution';
             $this->load->view('frontdetail',$data);
