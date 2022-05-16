@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php
                         foreach ($listeQuestion as $key) { ?>
                             <div class="post-preview">
-                                <a href="<?php echo site_url('FrontController/question'); ?>?idQuestion=<?php echo $key['id'];  ?>">
+                                <a href="<?php echo site_url('listequestion')."/".$key['url']."idQuestion=".$key['id']; ?>">
                                 <center><h2><?php echo $key['question']; ?></h2></center>
                                 </a><br>
                             </div>
