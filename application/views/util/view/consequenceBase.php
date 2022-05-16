@@ -8,5 +8,5 @@
 </p>
 <p>La suite:</p>
 <?php foreach($consequence as $key){ ?>
-    <h4><a href="<?php echo site_url('listeconsequence')."/".$key['url']."?idConsequence=".$key['id']; ?>"><?php echo $key["id"]; ?> - <?php echo $key["titre"]; ?></a><br></h4>
+    <h4><a href="<?php echo site_url('listeconsequence')."/".$key['url']."-".$key['id']; ?>"><?php echo $key["id"]; ?> - <?php echo $key["titre"]; ?></a><br></h4>
 <?php } ?>
