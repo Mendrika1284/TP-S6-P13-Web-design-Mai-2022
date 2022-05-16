@@ -15,6 +15,21 @@ class FirstModel extends CI_Model
         return $tab;
     }
 
+    public function getTable(){
+        $tables = $this->db->list_tables();
+        return $tables;
+    }
+
+    public function getColumn($table){
+        $query=$this->db->query('SHOW COLUMNS FROM '.$table);
+        $tab = array();
+        foreach ($query->result_array() as $row) {
+            $nom = $row;
+            $tab[] = $nom;
+        }
+        return $tab;
+    }
+
     public function getAllQuestion(){
         $query=$this->db->query('SELECT * FROM Question');
         $tab = array();
@@ -77,6 +92,21 @@ class FirstModel extends CI_Model
             $tab[] = $nom;
         }
         return $tab;
+    }
+
+    public function insert($table, $data){
+        $this->db->insert($table, $data);
+        return true;
+    }
+
+    public function update($nomTable, $id, $data){
+        $this->db->where('id',$id);
+        return $this->db->update($nomTable, $data);
+    }
+
+    public function delete($nomTable,$id){
+        $this->db->where('id', $id);
+        $this->db->delete($nomTable);
     }
 
 }
