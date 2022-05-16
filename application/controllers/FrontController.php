@@ -30,7 +30,7 @@ class FrontController extends CI_Controller {
     // }
     public function question(){
         $data = array();
-        $idQuestion = $_GET['idQuestion'];
+        $idQuestion = $_GET['id'];
         if($idQuestion == 1){
             $data['question'] = $this->FirstModel->getQuestionById($idQuestion);
             $data['cause'] = $this->FirstModel->getCause();
@@ -58,7 +58,7 @@ class FrontController extends CI_Controller {
     }
     public function consequence(){
         $data = array();
-        $idConsequence = $_GET['idConsequence'];
+        $idConsequence = $_GET['id'];
         $data['consequence'] = $this->FirstModel->getConsequenceById($idConsequence);
         $data['title'] = "Conséquence";
         $data['header'] = 'util/header/consequence';
