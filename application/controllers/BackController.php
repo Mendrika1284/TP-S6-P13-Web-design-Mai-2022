@@ -41,19 +41,19 @@ class BackController extends CI_Controller {
         $table = $_POST['table'];
         $data = array();
         $data['titre'] = "Page CRUD pour ";
-        if($table == "cause"){
+        if($table == "Cause"){
             $data['table'] = $table;
             $data['backview']="util/backView/cause";
             $data['column'] = $this->FirstModel->getColumn($table);
             $data['cause']=$this->FirstModel->getCause();
             $this->load->view("backCrud",$data);
-        }else if($table == "consequence"){
+        }else if($table == "Consequence"){
             $data['table'] = $table;
             $data['backview']="util/backView/consequence";
             $data['column'] = $this->FirstModel->getColumn($table);
             $data['consequence']=$this->FirstModel->getConsequence();
             $this->load->view("backCrud",$data);
-        }else if($table == "solution"){
+        }else if($table == "Solution"){
             $data['table'] = $table;
             $data['backview']="util/backView/solution";
             $data['column'] = $this->FirstModel->getColumn($table);
@@ -70,7 +70,7 @@ class BackController extends CI_Controller {
         $table = $_POST['table'];
         $id= $_POST['id'];
 
-        if($table == "cause"){
+        if($table == "Cause"){
             $data = array(
                 'idQuestion' => $id,
                 'detail' => $_POST['textarea']
@@ -84,13 +84,13 @@ class BackController extends CI_Controller {
             $data['cause']=$this->FirstModel->getCause();
             $this->load->view("backCrud",$data);
 
-        }else if($table == "consequence"){
+        }else if($table == "Consequence"){
             if($this->input->post('submit')){
             
                 //Check whether user upload picture
                 if(!empty($_FILES['file']['name'])){
                     $config['upload_path'] = 'assets/assets/img/';
-                    $config['allowed_types'] = 'jpg|jpeg|png|gif';
+                    $config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
                     $config['file_name'] = $_FILES['file']['name'];
                     
                     //Load upload library and initialize configuration
@@ -136,7 +136,7 @@ class BackController extends CI_Controller {
                     $this->load->view("backCrud",$data);
                 }
             }
-        }else if($table == "solution"){
+        }else if($table == "Solution"){
             $data = array(
                 'idQuestion' => $id,
                 'solution' => $_POST['input']
@@ -160,19 +160,19 @@ class BackController extends CI_Controller {
         $table = $_GET['table'];
         $data['titre'] = "Page CRUD pour ";
         $this->FirstModel->delete($table,$id);
-        if($table == "cause"){
+        if($table == "Cause"){
             $data['table'] = $table;
             $data['backview']="util/backView/cause";
             $data['column'] = $this->FirstModel->getColumn($table);
             $data['cause']=$this->FirstModel->getCause();
             $this->load->view("backCrud",$data);
-        }else if($table == "consequence"){
+        }else if($table == "Consequence"){
             $data['table'] = $table;
             $data['backview']="util/backView/consequence";
             $data['column'] = $this->FirstModel->getColumn($table);
             $data['consequence']=$this->FirstModel->getConsequence();
             $this->load->view("backCrud",$data);
-        }else if($table == "solution"){
+        }else if($table == "Solution"){
             $data['table'] = $table;
             $data['backview']="util/backView/solution";
             $data['column'] = $this->FirstModel->getColumn($table);
@@ -184,6 +184,66 @@ class BackController extends CI_Controller {
     public function goBack(){
         $data['table'] = $this->FirstModel->getTable();
         $this->load->view("backOffice/backOffice.php",$data); 
+    }
+
+    public function updatePage(){
+        $id = $_GET['id'];
+        $table = $_GET['table'];
+        $data = array();
+        if($table == "Cause"){
+            $data['cause'] = $this->FirstModel->getCauseById($id);
+            $data['update'] = "util/backUpdate/cause";
+            $data['table'] = $table;
+            $this->load->view("backUpdate.php",$data);
+        }else if($table == "Consequence"){
+            $data['consequence'] = $this->FirstModel->getConsequenceById($id);
+            $data['update'] = "util/backUpdate/consequence";
+            $data['table'] = $table;
+            $this->load->view("backUpdate.php",$data);
+        }else if($table == "Solution"){
+            $data['solution'] = $this->FirstModel->getSolutionById($id);
+            $data['update'] = "util/backUpdate/solution";
+            $data['table'] = $table;
+            $this->load->view("backUpdate.php",$data);
+        }
+    }
+
+    public function update(){
+        $id = $_POST['id'];
+        $table=$_POST['table'];
+        $data = array();
+        if($table == "Cause"){
+            $data = array(
+                'detail' => $_POST['cause']
+            );
+            $this->FirstModel->update($table,$id,$data);
+            $data['cause'] = $this->FirstModel->getCauseById($id);
+            $data['update'] = "util/backUpdate/cause";
+            $data['table'] = $table;
+            $this->load->view("backUpdate.php",$data);
+        }else if($table == "Consequence"){
+                        $slug = url_title($_POST['titre'], 'dash', true);
+                        $data = array(
+                            'representation' => $_POST['image'],
+                            'titre' => $_POST['titre'],
+                            'consequence' => $_POST['consequence'],
+                            'url' => $slug
+                        );     
+                        $this->FirstModel->update($table,$id,$data);
+                        $data['consequence'] = $this->FirstModel->getConsequenceById($id);
+                        $data['update'] = "util/backUpdate/consequence";
+                        $data['table'] = $table;      
+                        $this->load->view("backUpdate.php",$data);
+        }else if($table == "Solution"){
+            $data = array(
+                'solution' => $_POST['solution']
+            );
+            $this->FirstModel->update($table,$id,$data);
+            $data['solution'] = $this->FirstModel->getSolutionById($id);
+            $data['update'] = "util/backUpdate/solution";
+            $data['table'] = $table;      
+            $this->load->view("backUpdate.php",$data);
+        }
     }
     
 }
