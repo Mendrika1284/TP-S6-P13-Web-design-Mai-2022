@@ -21,7 +21,7 @@
 						<tr>
                             <td><?php echo $key['id'] ?></td>
                             <td contenteditable><?php echo $key['detail'] ?></td>
-							<td><a href="<?php echo site_url('BackController/update'); ?>?id=<?php echo $key['id'] ?>&&table=cause">Modifier</a></td>
+							<td><a href="<?php echo site_url('BackController/updatePage'); ?>?id=<?php echo $key['id'] ?>&&table=cause">Modifier</a></td>
 							<td><a href="<?php echo site_url('BackController/delete'); ?>?id=<?php echo $key['id'] ?>&&table=cause">Supprimer</a></td>
                         </tr>
 					<?php } ?>
