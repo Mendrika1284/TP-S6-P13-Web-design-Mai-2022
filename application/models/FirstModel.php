@@ -62,6 +62,18 @@ class FirstModel extends CI_Model
         return $tab;
     }
 
+    public function getCauseById($id){        
+        $query="SELECT * FROM Cause WHERE id=%s";
+        $sprint = sprintf($query, $this->db->escape($id));
+        $query = $this->db->query($sprint);
+        $tab = array();
+        foreach ($query->result_array() as $row) {
+            $nom = $row;
+            $tab[] = $nom;
+        }
+        return $tab;
+    }
+
     public function getConsequence(){
         $query=$this->db->query('SELECT * FROM Consequence');
         $tab = array();
@@ -94,6 +106,18 @@ class FirstModel extends CI_Model
         return $tab;
     }
 
+    public function getSolutionById($id){        
+        $query="SELECT * FROM Solution WHERE id=%s";
+        $sprint = sprintf($query, $this->db->escape($id));
+        $query = $this->db->query($sprint);
+        $tab = array();
+        foreach ($query->result_array() as $row) {
+            $nom = $row;
+            $tab[] = $nom;
+        }
+        return $tab;
+    }
+
     public function insert($table, $data){
         $this->db->insert($table, $data);
         return true;
@@ -101,7 +125,7 @@ class FirstModel extends CI_Model
 
     public function update($nomTable, $id, $data){
         $this->db->where('id',$id);
-        return $this->db->update($nomTable, $data);
+        $this->db->update($nomTable, $data);
     }
 
     public function delete($nomTable,$id){
