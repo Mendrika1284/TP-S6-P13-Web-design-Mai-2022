@@ -22,7 +22,7 @@
 						<tr>
                             <td><?php echo $key['id'] ?></td>
                             <td><?php echo $key['solution'] ?></td>
-							<td><a href="<?php echo site_url('BackController/update'); ?>?id=<?php echo $key['id'] ?>&&table=solution">Modifier</a></td>
+							<td><a href="<?php echo site_url('BackController/updatePage'); ?>?id=<?php echo $key['id'] ?>&&table=solution">Modifier</a></td>
 							<td><a href="<?php echo site_url('BackController/delete'); ?>?id=<?php echo $key['id'] ?>&&table=solution">Supprimer</a></td>
                         </tr>
 					<?php } ?>
