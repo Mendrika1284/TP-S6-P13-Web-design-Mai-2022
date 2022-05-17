@@ -35,8 +35,8 @@
                             <td><?php echo $key['titre'] ?></td>
                             <td><?php echo $key['consequence'] ?></td>
 							<td><?php echo $key['url'] ?></td>
-							<td><a href="<?php echo site_url('BackController/update'); ?>?id=<?php echo $key['id'] ?>&&table=consequence">Modifier</a></td>
-							<td><a href="<?php echo site_url('BackController/delete'); ?>?id=<?php echo $key['id'] ?>&&table=consequence">Supprimer</a></td>
+							<td><a href="<?php echo site_url('BackController/updatePage'); ?>?id=<?php echo $key['id'] ?>&table=consequence">Modifier</a></td>
+							<td><a href="<?php echo site_url('BackController/delete'); ?>?id=<?php echo $key['id'] ?>&table=consequence">Supprimer</a></td>
                         </tr>
 					<?php } ?>
 				</table>
