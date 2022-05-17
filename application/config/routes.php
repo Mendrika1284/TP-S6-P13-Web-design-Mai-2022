@@ -56,5 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['manaona'] = 'BaseController/index';
 $route['backoffice'] = 'BackController/login';
-$route['listequestion/(:any)']="FrontController/question";
-$route['listeconsequence/(:any)']="FrontController/consequence";
+$route['listequestion/(:any)-(:any)']="FrontController/question/$1/$2";
+$route['listeconsequence/(:any)-(:any)']="FrontController/consequence/$1/$2";
