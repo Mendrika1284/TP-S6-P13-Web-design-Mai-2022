@@ -28,9 +28,8 @@ class FrontController extends CI_Controller {
     //     $data['view'] = 'acceuil';
     //     $this->load->view('template',$data);
     // }
-    public function question(){
+    public function question($slug,$idQuestion){
         $data = array();
-        $idQuestion = $_GET['id'];
         if($idQuestion == 1){
             $data['question'] = $this->FirstModel->getQuestionById($idQuestion);
             $data['cause'] = $this->FirstModel->getCause();
@@ -56,11 +55,10 @@ class FrontController extends CI_Controller {
             $this->load->view('errors/html/error_404.php');
         }
     }
-    public function consequence(){
+    public function consequence($slug,$idConsequence){
         $data = array();
-        $idConsequence = $_GET['id'];
         $data['consequence'] = $this->FirstModel->getConsequenceById($idConsequence);
-        $data['title'] = "Conséquence";
+        $data['title'] = $data['consequence'][0]['titre'];
         $data['header'] = 'util/header/consequence';
         $data['view'] = 'util/view/consequence';
         $this->load->view('frontdetail',$data);
